@@ -4,7 +4,7 @@ const https = require("https");
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("public")); //for static files
 app.use(bodyParse.urlencoded({extended :true}));
 
 app.get("/", (req,res) =>{
@@ -32,11 +32,13 @@ app.post("/", (req,res) => {
         ]
     }
 
+    //to send it it the server (mailchamp)
     const post_jsonData = JSON.stringify(data);
 
     const url = "https://us21.api.mailchimp.com/3.0/lists/f7ee0325eb";
 
 
+    //set up the options
     const options = {
         method : "POST",
         auth : "me:037e077d2d5ac6d325f47bb8081196a0-us21"

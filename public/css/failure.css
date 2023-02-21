@@ -1,0 +1,88 @@
+body
+{
+font-family: 'Roboto Slab', serif;
+margin:0px;
+padding:0px;
+}
+
+.success_container
+{
+width:400px;
+padding:120px 100px;
+-webkit-box-shadow: 0px 0px 25px 0px rgba(209,209,209,1);
+-moz-box-shadow: 0px 0px 25px 0px rgba(209,209,209,1);
+box-shadow: 0px 0px 25px 0px rgba(209,209,209,1);
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+
+}
+
+.ic_schauhan
+{
+width:50px;
+height:50px;
+line-height:50px;
+background:rgb(204, 0, 10);
+text-align:center;
+margin:0px auto;
+border-radius:100%;
+
+}
+
+.ic_schauhan i
+{
+color:#fff;
+text-align:center;
+height:50px;
+font-size:25px;
+line-height:50px;
+animation: txt 2s infinite alternate;
+}
+
+@keyframes txt { 0%{ font-size:15px; } 50%{ font-size:25px; } 100%{ font-size:15px; } }
+
+.success_container p
+{
+text-align:center;
+font-weight:600;
+margin:10px;
+font-size:20px;
+padding:0px;
+color:rgb(204, 0, 88);
+animation: blink 1s steps(5, start) infinite;
+-webkit-animation: blink 1s steps(5, start) infinite;
+}
+
+
+@keyframes blink { 0%{ color:rgb(255, 6, 39); } 100%{ color:rgb(166, 2, 2); } }
+
+.line
+{
+width:100%;
+height:6px;
+background:rgb(204, 5, 10);
+position:absolute;
+left:0;
+bottom:0;
+animation: line 2s infinite alternate;
+}
+
+@keyframes line { 0%{width:0%; background:rgb(249, 1, 34); } 100%{ width:100%; background:rgb(134, 0, 0); } }
+
+
+@media only screen and (max-width: 767px) 
+{
+.success_container
+{
+width:100%;
+padding:120px 100px;
+box-shadow:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+}

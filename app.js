@@ -41,7 +41,7 @@ app.post("/", (req,res) => {
     //set up the options
     const options = {
         method : "POST",
-        auth : "me:037e077d2d5ac6d325f47bb8081196a0-us21"
+        auth : "me:918b500ed179471160007a1fdee62087-us21"
     };
 
 
@@ -51,14 +51,21 @@ app.post("/", (req,res) => {
         response.on("data", (chunk) => {
             console.log(JSON.parse(chunk));
             const jsonChunk = JSON.parse(chunk);
-            const error_code = jsonChunk.errors[0];
             console.log("================");
-            console.log(error_code);
-            if (!error_code) {
-                 res.sendFile(__dirname + "/success.html");
-            }
-            else {
-                 res.sendFile(__dirname + "/failure.html");
+            
+            if(response.statusCode === 200){
+                const error_code = jsonChunk.errors[0];
+                console.log(error_code);
+
+                if (!error_code) {
+
+                    res.sendFile(__dirname + "/success.html");
+               }
+               else {
+                    res.sendFile(__dirname + "/failure.html");
+               }
+            } else{
+                res.send("Key problem");
             }
         })
 
